@@ -21,12 +21,19 @@
     import {ChevronDownIcon} from"@chakra-ui/icons"
     import { Icon } from '@chakra-ui/react'
     import MentuItems from "./MenuItems"
-
+    import {Link} from "react-router-dom"
 
     export default function Navbar(){
         const { isOpen, onOpen, onClose } = useDisclosure()
         const btnRef = useRef()
     
+       const  handleKeyPress=(event)=>{
+            if(event.key=="Enter")
+            {
+                console.log("handleKeyPress print");
+                <Link to={"/SearchInput"}>SearchInput</Link>
+            }
+        }
 
         return (
             <Box>
@@ -75,7 +82,8 @@
                 </Box>
 
                 <Box w="50%"   > 
-                <Input w="100%" bg="white" placeholder='Search essentials,groceries,and more...' size='lg'  />
+                <Input w="100%" bg="white" placeholder='Search essentials,groceries,and more...' size='lg' 
+              type="text"  onKeyPress={handleKeyPress}  />
                 
             </Box>
                 <Box >
@@ -131,6 +139,8 @@
                         
             </List>
                 </Box>
+
+
 
     </Box>
         )
