@@ -1,7 +1,8 @@
 import { Box } from "@chakra-ui/react";
 import {useState} from "react"
 import SimpleImageSlider from "react-simple-image-slider"
-import { Image} from '@chakra-ui/react'
+import { Image,Heading} from '@chakra-ui/react'
+import TopDeal from "./TopDeal"
 
 const images=[
 {
@@ -27,14 +28,41 @@ const images=[
 }
 ];
 
+const  TopCategories=[
+    {
+        ImgData:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109073_1654018509_Fruits-Veg.jpg"
+    },
+    {
+        ImgData:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109088_1654018530_Beverage-Corner.jpg"
+    },
+    {
+        ImgData:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109143_1656693044_Foodgrains-Oils.jpg"
+    },
+    {
+        ImgData:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109179_1654018570_Snacks-FOOD.jpg"
+    },
+    {
+        ImgData:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109205_1654018587_Home-care.jpg"
+    },
+    {
+        ImgData:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109260_1654018604_personal-Care.jpg"
+    },
+    {
+        ImgData:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109280_1654018629_Dairy-Bakery.jpg"
+    },
+    {
+        ImgData:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109301_1654018647_Instant-Foods.jpg"
+    },
+    {
+        ImgData:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657109327_1654018658_Home-Kitchen.jpg"
+    }
+];
+
 export default function MiddlePart(){
 
-//    const [data,setData]=useState({obj})
-
-    // const handleclick=()=>{
-    //     setData([...data])
-    // }
-    // console.log(data)
+// console.log(TopCategories)
+ const [data,setData]=useState(TopCategories)
+ console.log(data)
     return (
         <>
         {/* <h1>MiddlePart</h1> */}
@@ -58,8 +86,30 @@ export default function MiddlePart(){
 
         <Box>
             <Image m="auto"  w="90%"  src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1658340139_Camp_A_new_web.jpg
-" alt="" />
+                " alt="" />
         </Box>
-        </>
+        {/* Shop from Top Categories */}
+        <Heading  as ='h6' size='md' p="18px">
+        Shop from Top Categories
+        </Heading>
+       <Box w="95%" display="flex"  gap="4px" m="auto">
+        {
+            data.map((item)=>(
+                <Box  >
+                    <Image  src={item.ImgData}></Image>
+                </Box>
+            ))
+        }
+       </Box>
+
+       <Box>
+            <Image m="auto"  w="90%"  src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1624041574_web_static.jpg" alt="" />
+        </Box>
+        <Box>
+            <TopDeal/>
+        </Box>
+      
+
+       </>
     )
 }
