@@ -1,9 +1,9 @@
-import { Box } from "@chakra-ui/react";
+import { Box,Grid  } from "@chakra-ui/react";
 import {useState} from "react"
 import SimpleImageSlider from "react-simple-image-slider"
 import { Image,Heading} from '@chakra-ui/react'
 import TopDeal from "./TopDeal"
-
+import Footer from "./Footer"
 const images=[
 {
         url:"https://www.jiomart.com/images/cms/aw_rbslider/slides/1657775644_Mumbai_Web_JioMart_1.jpg",
@@ -108,6 +108,44 @@ export default function MiddlePart(){
         <Box>
             <TopDeal/>
         </Box>
+
+        <Heading  p="18px"  size="md">Women's Fashion</Heading>
+    <Box display="flex" gap="2rem"  
+     justifyContent="center">
+
+       <Box  >
+            <Image borderRadius="1rem" m="auto"  w="486px" h="346px"  src="https://www.jiomart.com/images/cms/section/category/498/527.png?v=1651706581" alt="" />
+       
+        </Box> 
+        <Box  w="486px">
+            <Image borderRadius="1rem" m="auto"  w="486px" h="346px"  src="https://www.jiomart.com/images/cms/section/category/498/579.png?v=1651706581" alt="" />
+       
+        </Box>
+    </Box> 
+
+    <Box display="flex" justifyContent="center" gap="1.5rem" mt="1.5rem">
+        <Image src="https://www.jiomart.com/images/cms/section/category/498/511.png?v=1651706581"/>
+        <Image src="https://www.jiomart.com/images/cms/section/category/498/525.png?v=1651706581"/>
+        <Image src="https://www.jiomart.com/images/cms/section/category/498/530.png?v=1651706581"/>
+        <Image src="https://www.jiomart.com/images/cms/section/category/498/572.png?v=1651706581"/>
+        <Image src="https://www.jiomart.com/images/cms/section/category/498/578.png?v=1651706581"/>
+      
+
+    </Box>
+    <Grid gridTemplateColumns="repeat(2,1fr)"
+   pl="80px"  gridGap="1rem" alignItems="center">
+        <Image  src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1656790165_Web--600-x-350.jpg"/>
+        <Image src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1647359679_Milk-Fest--600x350.jpg"/>
+
+        <Image src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1623423184_wm.jpg"/>
+
+        <Image src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1656690807_Min-33-600x350.jpg"/>
+
+
+    </Grid >
+    <Box>
+        <Footer/>
+    </Box>
       
 
        </>
