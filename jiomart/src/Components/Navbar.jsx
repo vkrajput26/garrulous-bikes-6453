@@ -22,6 +22,7 @@
     import { Icon } from '@chakra-ui/react'
     import MentuItems from "./MenuItems"
     import {Link} from "react-router-dom"
+    import SearchInput from "./SearchInput"
 
     export default function Navbar(){
         const { isOpen, onOpen, onClose } = useDisclosure()
@@ -30,9 +31,14 @@
        const  handleKeyPress=(event)=>{
             if(event.key=="Enter")
             {
-                console.log("handleKeyPress print");
-                <Link to={"/SearchInput"}>SearchInput</Link>
+              
+                return(
+
+                    <Link to={"/SearchInput"}/>
+                )
+                
             }
+         
         }
 
         return (
@@ -74,16 +80,20 @@
 
                     </Box>
                     <Box>
+                        <Link to="/">
                     <Image src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQPmTXd7Wv5pEPjs508yq42PtBERgxbVOIMhxh3IlhpD8S7uR3L' 
                     w="104px"  h="70px" alt='jiomart' />
+                    </Link>
 
 
                     </Box>
                 </Box>
 
-                <Box w="50%"   > 
+                <Box w="50%" display="flex" gap="0.1rem" > 
+               
                 <Input w="100%" bg="white" placeholder='Search essentials,groceries,and more...' size='lg' 
-              type="text"  onKeyPress={handleKeyPress}  />
+              type="text"  onKeyPress={handleKeyPress}   />
+             <Button border="1px" borderColor="white" bg="#239ad6" color="white" size='lg'><Link to={"/SearchInput"}>Search</Link></Button>
                 
             </Box>
                 <Box >
@@ -106,7 +116,7 @@
                             Groceries
                         </MenuButton>
                         <MenuList>
-                            <MenuItem>Fruit & Vedetables</MenuItem>
+                            <MenuItem><Link to={"/SearchInput"}>Fruit & Vedetables </Link>   </MenuItem>
                             <MenuItem>Premium Fruit</MenuItem>
                             <MenuItem>Dairy & Bekery</MenuItem>
                             <MenuItem>Staples</MenuItem>
