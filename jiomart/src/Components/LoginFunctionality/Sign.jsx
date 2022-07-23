@@ -4,11 +4,21 @@ import Navbar from "../Navbar"
 import {Link} from "react-router-dom"
 
 import Verification from "../LoginFunctionality/Verification"
+import { useEffect } from "react"
 
 export default function SignIn()
 {
     const [text,setText]=useState("")
-    Verification(text)
+   
+    const handleClick =()=>{
+       
+   
+            Verification(text)
+
+  
+    }
+
+console.log("text", text)
     return (
         <>
         
@@ -27,7 +37,7 @@ export default function SignIn()
             <Input value={text} onChange={(e)=>setText(e.target.value)} placeholder="Enter your mobile no"></Input>
                         </Box>
                         <Link to="/Verification">
-                        <Button bg="#239ad6" color="white" 
+                        <Button onClick={handleClick} bg="#239ad6" color="white" 
                         mt="45px" ml="245px" borderRadius="24px">{">"}</Button>
                                 </Link>
                     </Box>
