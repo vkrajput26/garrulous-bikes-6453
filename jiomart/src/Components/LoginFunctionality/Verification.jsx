@@ -4,10 +4,11 @@
 import {Box,Image,Heading,Input,Button} from "@chakra-ui/react"
 import { useState } from "react"
 import Navbar from "../Navbar"
-export default function Verification()
+import {Link} from "react-router-dom"
+
+export default function Verification(props)
 {
-
-
+ 
     return (
         <>
         
@@ -24,13 +25,17 @@ export default function Verification()
                         <Box display="flex" mt="2rem" gap="1rem" >
                             <Heading pt="28px" size="md" >+91 </Heading>
                       
-                            <Input mt="24px" value="7389243027"/>
+                            <Input mt="24px" />
+                        
                         </Box>
                       
                         <Input mt="24px" placeholder="Enter your OTP"/>
                       
+                      <Link to="/">
+                      
                         <Button bg="#239ad6" color="white" 
-                        mt="45px" ml="245px" borderRadius="24px">Verify</Button>
+                        mt="45px" ml="245px" borderRadius="24px" w="40%">Verify</Button>
+                      </Link>
 
                     </Box>
 
@@ -38,6 +43,7 @@ export default function Verification()
    
                 
         </Box>
+     
         </>
 
     )

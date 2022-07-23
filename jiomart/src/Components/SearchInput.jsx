@@ -28,8 +28,9 @@ export default function SearchInput(){
 
         const handleStore=()=>{
         console.log("handleStore")
+        console.log(data)
 
-        window.localStorage.setItem("data", JSON.stringify(data));
+       localStorage.setItem("data", JSON.stringify(data));
         }
         console.log(filtering)
         console.log("pop",Popularity)
