@@ -1,4 +1,4 @@
-    import {Box,Button,useDisclosure,Input,Image,ListItem,List } from "@chakra-ui/react"
+    import {Box,Button,useDisclosure,Input,Image,ListItem,List,Heading } from "@chakra-ui/react"
     import {
         Drawer,
         DrawerBody,
@@ -20,6 +20,7 @@
     import {useRef} from "react"
     import {ChevronDownIcon} from"@chakra-ui/icons"
     import { Icon } from '@chakra-ui/react'
+ 
     import MentuItems from "./MenuItems"
     import {Link} from "react-router-dom"
     import SearchInput from "./SearchInput"
@@ -49,9 +50,14 @@
             justifyContent="space-around" bg="#008ecc">
                 <Box alignItems="center"  display="flex" gap="1.5rem">
                     <Box>
-                        <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
+                        <Button ref={btnRef}  onClick={onOpen} bg="#008ecc" _hover="#008ecc">
                             {/* <Icon as={HamburgerIcon} /> */}
-                            open
+                         <Box w="44px">
+
+                         <img w="100%" src="https://cdn-icons-png.flaticon.com/128/3388/3388837.png" alt="" />
+                         </Box>
+
+                        
                             </Button>
                             <Drawer
                                 isOpen={isOpen}
@@ -97,12 +103,17 @@
                 
             </Box>
                 <Box >
-                    <Box h="18%" w="32px"  borderRadius="8px" bg="#008ecc" pt="2px"  pl="3px">
-                        <Image  borderRadius="12px" w="24px" src='https://www.vippng.com/png/detail/214-2142162_member-login-icon-png-user-sign-in-icon.png'/>
+                <Link to="/SignIn">
+                    <Box h="18%" w="32px"  borderRadius="8px" bg="#008ecc" pt="2px"  pl="3px" display="flex" gap="0.5rem">
+                     <Image  borderRadius="12px" w="24px" 
+                     src='https://www.vippng.com/png/detail/214-2142162_member-login-icon-png-user-sign-in-icon.png'/>
+                        <Heading size="sm" color="white">Vivek</Heading>
                     </Box>
+                     </Link>
                 </Box>
-                <Box>
-                    <Image w="24px"   src='https://cdn-icons-png.flaticon.com/512/263/263142.png'/>
+                <Box display="flex" gap="0.5rem">
+                    <Image w="24px"   src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJSZN17XMAYDQY-YmCMAUHQdJGvknGNIHam4VkzVMvWcxMnC77f7Ii7yk2538VnlB5YuE&usqp=CAU'/>
+                    <Heading size="sm" color="white">Cart</Heading>
                 </Box>
             </Box>
     </Box>  
